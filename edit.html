@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="row">
+    <div class="row">
+        <div class="card card-body">
+
+            <form action="/update/{{students.id}}" method="POST">
+                <div class="form-group">
+                    <label>Name:</label></br>
+                    <input type="text" name="name" class="form-control" value="{{students.name}}" placeholder="Enter your name..." required></p>
+                    </div>
+                    <div class="form-group">
+                    <label>Email:</label></br>
+                    <input type="text" name="email" class="form-control" value="{{students.email}}" placeholder="Enter your email..." required></p>
+                    </div>
+                    <div class="form-group">
+                    <label>Phone:</label></br>
+                    <input type="text" name="phone" class="form-control" value="{{students.phone}}" placeholder="Enter your phonenumber..." required></p>
+                    </div>
+                    <div class="form-group">
+                    <label>Password:</label></br>
+                    <input type="text" name="password" class="form-control" value="{{students.password}}" placeholder="Enter your password..." required></p>                        
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"> Update </button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

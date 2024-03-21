@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>FORMS OF STUDENTS</title>
+    <style>
+        body{
+            background-color: aqua;
+            color: black;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+
+    <nav class="navbar navbar-dark bg-dark"> 
+        <a class="navbar-brand">Student List Forms</nav>
+
+            <div class="container">
+                {% block body %}     
+                {% endblock %}
+            </div>
+            <script>
+                const btnDelete= document.querySelectorAll('.btn-delete');
+                if(btnDelete){
+                    const btnArray = Array.from(btnDelete);
+                    btnArray.forEach((btn) => {
+                        btn.addEventListener('click', (e) => {
+                        if(!confirm('Are you sure you want to delete it?')){
+                            e.preventDefault();
+                            }
+                        });
+                    })
+                }
+                $(document) .ready(function() {
+                    $('#example') .DataTable({
+                        "aLenthMenu": [[3, 5, 10, 25, -1], [3, 5,
+                        
+                        10, 25, "ALL"]],
+                        "iDisplayLength": 3
+                    }
+                );
+             });
+            </script>
+        </center>
+    
+</body>
+</html>
